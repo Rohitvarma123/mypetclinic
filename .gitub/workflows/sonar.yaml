@@ -32,7 +32,7 @@ jobs:
         run: |
           WAR_FILE=target/MyWebApp.war
           curl -v --upload-file "$WAR_FILE" \
-            --user "${{ secrets.TOMCAT_USERNAME }}:${{ secrets.TOMCAT_PASSWORD }}" \
+            --user "${{ secrets.TOMCAT_USER }}:${{ secrets.TOMCAT_PASSWORD }}" \
             "${{ secrets.TOMCAT_HOST }}/manager/text/deploy?path=/myapp&update=true"
         working-directory: MyWebApp
         
